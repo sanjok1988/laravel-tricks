@@ -2,6 +2,7 @@
 
 #List All Middleware
 
+```php
 function getMiddlewareList(){
     $collection = collect(Route::getRoutes())->map(function($r){
         if(isset($r->action['middleware']))
@@ -9,3 +10,4 @@ function getMiddlewareList(){
     })->flatten();
     return array_unique($collection->toArray());
 }
+```
